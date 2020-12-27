@@ -56,6 +56,7 @@ namespace AssignmentForm
                 Console.Write("Venue is available, please enter another venue:");
                 venue = Console.ReadLine();
             }
+            
             return eventMan.addEvent(name, venue, eventDate, maxAttendee);
         }
 
@@ -96,7 +97,10 @@ namespace AssignmentForm
         {
             return registerMan.getRegisterList();
         }
-
+        public string registerListinForm()
+        {
+            return registerMan.getRegisterListinForm();
+        }
         public string getRegisterInfoById(int id)
         {
             return registerMan.getRegisterInfo(id);

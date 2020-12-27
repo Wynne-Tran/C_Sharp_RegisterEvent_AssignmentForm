@@ -38,7 +38,6 @@ namespace AssignmentForm
         public string getLastName() { return lastName; }
         public string getPhone() { return phone; }
         public int getNumBookings() { return bookings; }
-
         public void updateBookings()
         {
             bookings++;
@@ -47,11 +46,12 @@ namespace AssignmentForm
 
         public override string ToString()
         {
-            string s = "Customer " + customerId;
+            
+            string s = "Customer: " + customerId;
             s = s + "\nName: " + firstName + " " + lastName;
             s = s + "\nPhone: " + phone;
             s = s + "\nBookings: " + bookings;
-
+            
             return s;
         }
         

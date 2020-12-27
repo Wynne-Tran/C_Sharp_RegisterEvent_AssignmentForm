@@ -65,11 +65,11 @@ namespace AssignmentForm
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
+
             printDetail = FileCustomer.loadFromFile();
             txtList.Text = "";
             int id = Convert.ToInt32(txtID.Text);
-            txtList.Text = printDetail.getCustomer(id).ToString();
-
+            txtList.Text = Convert.ToString(printDetail.getCustomerInfo(id));
         }
     }
 }

@@ -65,7 +65,7 @@ namespace AssignmentForm
             printList = FileCustomer.loadFromTXTFile();
             txtEList.Text = "";
             int id = Convert.ToInt32(txtID.Text);
-            txtEList.Text = printList.getEvent(id).ToString();
+            txtEList.Text = printList.getEventInfo(id).ToString();
         }
     }
 }

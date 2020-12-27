@@ -32,6 +32,14 @@ namespace AssignmentForm
             this.minute = minute;
         }
 
+        public int getDay() { return day; }
+        public int getMonth() { return month; }
+        public int getYear() { return year; }
+        public int getHour() { return hour; }
+        public int getMin() { return minute; }
+      
+
+
         public string viewLongMonth()
         {
             switch (month)

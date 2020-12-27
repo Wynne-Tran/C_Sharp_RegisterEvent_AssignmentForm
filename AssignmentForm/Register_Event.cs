@@ -70,12 +70,7 @@ namespace AssignmentForm
             cm = FileCustomer.loadFromFile();
             txtout.Text = "";
             lblAtt.Text = "";
-            /*
-            int cusId = 0, eId = 0, num;
             
-            if(int.TryParse(txtcus.Text, out num)) { cusId = num; }
-            if (int.TryParse(txtev.Text, out num)) { eId = num; }
-            */
             int cusId = Convert.ToInt32(txtcus.Text);
             int eId = Convert.ToInt32(txtev.Text);
             Customer1 newReg = cm.getCustomer(cusId);
@@ -83,13 +78,16 @@ namespace AssignmentForm
             FileCustomer.writeRSVPFile(ec);
             coord.addRegister(cusId, eId);
             coord.addAttendee(cusId, eId);
+            
             FileCustomer.writeCoordFile(coord);
             lblAtt.Text = "Attendee added...";
             txtout.Text = "Thank you for registation!";
             txtcus.Text = "";
             txtev.Text = "";
 
-
+            // add attendee for event detail
+            
+           
 
         }
     }

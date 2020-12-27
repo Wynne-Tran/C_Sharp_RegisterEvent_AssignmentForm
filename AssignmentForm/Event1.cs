@@ -44,8 +44,17 @@ namespace AssignmentForm
         public int getEventId() { return eventId; }
         public string getEventName() { return eventName; }
         public string getVenue() { return venue; }
+        
         public int getMaxAttendees() { return maxAttendees; }
         public int getNumAttendees() { return numAttendees; }
+
+        public Date getEventDate() { return eventDate; }
+        public int getDay() { return eventDate.getDay(); }
+        public int getMonth() { return eventDate.getMonth(); }
+        public int getYear() { return eventDate.getYear(); }
+        public int getHour() { return eventDate.getHour(); }
+        public int getMin() { return eventDate.getMin(); }
+
 
         public bool addAttendee(Customer1 c)
         {
@@ -86,11 +95,12 @@ namespace AssignmentForm
 
         public override string ToString()
         {
-            string s = "Event: " + eventId + "\nName: " + eventName;
-            s = s + "\nVenue: " + venue;
-            s = s + "\nDate:" + eventDate;
-            s = s + "\nRegistered Attendees:" + numAttendees;
-            s = s + "\nAvailable spaces:" + (maxAttendees - numAttendees);
+            string s = "Event: " + eventId ;
+            s=s+ " Name: " + eventName;
+            s = s + " Venue: " + venue;
+            s = s + " Date:" + eventDate;
+            s = s + " Registered Attendees:" + numAttendees;
+            s = s + " Available spaces:" + (maxAttendees - numAttendees);
             s = s + getAttendees();
             return s;
         }

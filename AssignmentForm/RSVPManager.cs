@@ -100,7 +100,23 @@ namespace AssignmentForm
             string s= "Register ID - Customer ID - Event ID";
             for (int x = 0; x < numRegister; x++)
             {
-                s = s + "\n" + registerList[x].getregId() + "\n" + registerList[x].getcusId() + "\n" + registerList[x].geteveId();
+                s = s + "\n" + registerList[x].getregId() + "\t" + registerList[x].getcusId() + "\t" + registerList[x].geteveId();
+            }
+            return s;
+        }
+
+        public string getRegisterListinForm()
+        {
+
+            string s = "";
+            for (int x = 0; x < numRegister; x++)
+            {
+                s = s + registerList[x].getregId();
+                s = s + "\n" + registerList[x].getcusId();
+                s = s + "\n" + registerList[x].geteveId();
+                s = s + "\n" + registerList[x].getCustomerFName();
+                s = s + "\n" + registerList[x].getCustomerLName();
+
             }
             return s;
         }
@@ -111,5 +127,21 @@ namespace AssignmentForm
             if (loc == -1) { return "There is no RSVP with id " + regId + "."; }
             return registerList[loc].ToString();
         }
+
+        public int getnumRegister()
+        {
+            return numRegister;
+        }
+
+
+        public RSVP getRSVPAtPosition(int loc)
+        {
+            if (loc < numRegister)
+            {
+                return registerList[loc];
+            }
+            return null;
+        }
+
     }
 }

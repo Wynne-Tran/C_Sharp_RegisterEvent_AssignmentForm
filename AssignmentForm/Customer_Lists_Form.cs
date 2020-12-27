@@ -58,6 +58,7 @@ namespace AssignmentForm
 
         private void Customer_Lists_Form_Load(object sender, EventArgs e)
         {
+
             IEnumerable<string> print = File.ReadLines(@"CustomerList.txt");
             txtList.Text = (String.Join(Environment.NewLine, print));
 

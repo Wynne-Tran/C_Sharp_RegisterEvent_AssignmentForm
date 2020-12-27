@@ -88,6 +88,7 @@ namespace AssignmentForm
             for (int x = 0; x < numCustomers; x++)
             {
                 s = s + customerList[x].getId() + "\n" + customerList[x].getFirstName() + "\n" + customerList[x].getLastName() + "\n" + customerList[x].getPhone() + "\n";
+                //s = s + "\n";
             }
             return s;
         }
@@ -97,6 +98,23 @@ namespace AssignmentForm
             return numCustomers;
         }
 
-        
+        public Customer1 getAccountAtPosition(int loc)
+        {
+            if (loc < numCustomers)
+            {
+                return customerList[loc];
+            }
+            return null;
+        }
+
+        public int getBookingDetail(int cusId)
+        {
+            if(customerExist(cusId) == true)
+            {
+                return getCustomer(cusId).getNumBookings();
+            }
+            return 0;
+        }
+
     }
 }

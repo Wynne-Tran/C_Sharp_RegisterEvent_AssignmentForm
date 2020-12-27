@@ -39,17 +39,18 @@ namespace AssignmentForm
         public int getregId() { return registerId; }
         public int getcusId() { return customerId; }
         public int geteveId() { return eventId; }
-
+        public string getCustomerFName() { return customerFname; }
+        public string getCustomerLName() { return customerLname; }
 
 
 
         public override string ToString()
         {
-            string s = "-----------Register Infomation----------" + "\n";
-            s = s + "\nRegister Day: " + registerDate;
-            s = s + "\nRegister Number: " + registerId;
-            s = s + "\nRegister Name: " + customerFname + " " + customerLname;
-            s = s + "\nEven ID: " + eventId;
+            string s = "";
+            s = s + " Register Day: " + registerDate;
+            s = s + " Register Number: " + registerId;
+            s = s + " Register Name: " + customerFname + " " + customerLname;
+            s = s + " Even ID: " + eventId;
             return s;
         }
     }

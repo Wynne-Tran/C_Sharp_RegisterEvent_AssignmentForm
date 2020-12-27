@@ -95,9 +95,44 @@ namespace AssignmentForm
             string s = "";
             for (int x = 0; x < numEvents; x++)
             {
-                s = s + "\n" + eventList[x].getEventId() + " \n " + eventList[x].getEventName() + " \n " + eventList[x].getVenue();
+                s = eventList[x].getEventId() + "\n" + eventList[x].getEventName() + "\n" + eventList[x].getVenue()
+                    ;
             }
             return s;
         }
+
+        public string getEventListinForm()
+        {
+            string s = "";
+            for (int x = 0; x < numEvents; x++)
+            {
+                s = eventList[x].getEventId() 
+                    + "\n" + eventList[x].getEventName() 
+                    + "\n" + eventList[x].getVenue()
+                    + "\n" + eventList[x].getDay() 
+                    + "\n" + eventList[x].getMonth() 
+                    + "\n" + eventList[x].getYear() 
+                    + "\n" + eventList[x].getHour() 
+                    + "\n" + eventList[x].getMin() 
+                    + "\n" + eventList[x].getMaxAttendees();
+            }
+            return s;
+        }
+
+        public int getNumEvents()
+        {
+            return numEvents;
+        }
+
+
+        public Event1 getEventAtPosition(int loc)
+        {
+            if (loc < numEvents)
+            {
+                return eventList[loc];
+            }
+            return null;
+        }
+
     }
 }
