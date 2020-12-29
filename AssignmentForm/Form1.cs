@@ -29,10 +29,13 @@ namespace AssignmentForm
 
             InitializeComponent();
             ec = new EventCoordinator(200, 1000, 101, 5000, 100, 10000); // add data
-            soundXmast.SoundLocation = "Bell.wav";
-            soundXmast.Load();
-            soundXmast.Play();
-            soundXmast.PlayLooping();
+
+            //This results an runtime error when the sound file does not exist
+            //soundXmast.SoundLocation = "Bell.wav";
+
+            //soundXmast.Load();
+            //soundXmast.Play();
+            //soundXmast.PlayLooping();
         }
 
         private void Form1_Load(object sender, EventArgs e)

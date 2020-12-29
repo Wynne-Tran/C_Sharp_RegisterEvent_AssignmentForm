@@ -9,24 +9,19 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AssignmentForm
 {
     public partial class Register_Event : Form
     {
-        RSVPManager ec;
-        CustomerManager cm;
-        EventManager em;
-        RSVP_Form r1;
-        EventCoordinator coord;
+        RSVPManager rsvpManager;
+        CustomerManager customerManager;
+        EventManager eventManager;
+        RSVP_Form rsvpForm;
+        EventCoordinator eventCoordinator;
         public Register_Event()
         {
             InitializeComponent();
@@ -43,11 +38,11 @@ namespace AssignmentForm
         public Register_Event(RSVP_Form r)
         {
             InitializeComponent();
-            r1 = r;
-            em = new EventManager(1, 100);
-            cm = new CustomerManager(1, 100);
-            ec = new RSVPManager(1, 100);
-            coord = new EventCoordinator(1, 100, 1, 100, 1, 100);
+            rsvpForm = r;
+            eventManager = new EventManager(1, 100);
+            customerManager = new CustomerManager(1, 100);
+            rsvpManager = new RSVPManager(1, 100);
+            eventCoordinator = new EventCoordinator(1, 100, 1, 100, 1, 100);
             
         }
 
@@ -67,7 +62,7 @@ namespace AssignmentForm
 
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
-            cm = FileCustomer.loadFromFile();
+            customerManager = FileCustomer.loadFromFile();
             txtout.Text = "";
             lblAtt.Text = "";
             /*
@@ -78,12 +73,13 @@ namespace AssignmentForm
             */
             int cusId = Convert.ToInt32(txtcus.Text);
             int eId = Convert.ToInt32(txtev.Text);
-            Customer1 newReg = cm.getCustomer(cusId);
-            ec.addRegister(cusId, newReg.getFirstName(), newReg.getLastName(), eId);
-            FileCustomer.writeRSVPFile(ec);
-            coord.addRegister(cusId, eId);
-            coord.addAttendee(cusId, eId);
-            FileCustomer.writeCoordFile(coord);
+            Customer1 newReg = customerManager.getCustomer(cusId);
+            
+            rsvpManager.addRegister(cusId, newReg.getFirstName(), newReg.getLastName(), eId);
+            FileCustomer.writeRSVPFile(rsvpManager);
+            eventCoordinator.addRegister(cusId, eId);
+            eventCoordinator.addAttendee(cusId, eId);
+            FileCustomer.writeCoordFile(eventCoordinator);
             lblAtt.Text = "Attendee added...";
             txtout.Text = "Thank you for registation!";
             txtcus.Text = "";
