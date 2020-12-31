@@ -153,13 +153,12 @@ namespace AssignmentForm
             Event1 temp;
             StreamWriter sw = new StreamWriter(@"EventListDetail.txt");
             sw.WriteLine(numEvent);
+            //sw = File.AppendText(@"EventListDetail.txt");
             for (int x = 0; x < numEvent; x++)
             {
                 temp = am.getEventAtPosition(x);
             }
             sw.WriteLineAsync(am.getEventListinForm(attendee, customer));
-            
-
             sw.Flush(); 
             sw.Close();
 
@@ -167,25 +166,25 @@ namespace AssignmentForm
         }
         public static EventManager loadFromTXTFileDetail()
         {
-
             EventManager em = new EventManager(1, 100);
             int numEvent;
             string id, name, venue, customer;
             int day, month, year, hour, minus, attendee, maxAttendee;
             StreamReader sr = new StreamReader(@"EventListDetail.txt");
             numEvent = Convert.ToInt32(sr.ReadLine());
+            sr.ReadLine();
             for (int x = 0; x < numEvent; x++)
             {
                 id = sr.ReadLine();
                 name = sr.ReadLine();
                 venue = sr.ReadLine();
-                day = Int32.Parse(sr.ReadLine());
-                month = Int32.Parse(sr.ReadLine());
-                year = Int32.Parse(sr.ReadLine());
-                hour = Int32.Parse(sr.ReadLine());
-                minus = Int32.Parse(sr.ReadLine());
-                attendee = Int32.Parse(sr.ReadLine());
-                maxAttendee = Int32.Parse(sr.ReadLine()) - attendee;
+                day = Convert.ToInt32(sr.ReadLine());
+                month = Convert.ToInt32(sr.ReadLine());
+                year = Convert.ToInt32(sr.ReadLine());
+                hour = Convert.ToInt32(sr.ReadLine());
+                minus = Convert.ToInt32(sr.ReadLine());
+                attendee = Convert.ToInt32(sr.ReadLine());
+                maxAttendee = Convert.ToInt32(sr.ReadLine());
                 customer = sr.ReadLine();
                 Date edate = new Date(day, month, year, hour, minus);
                 em.addEvent(name, venue, edate, maxAttendee, attendee, customer);

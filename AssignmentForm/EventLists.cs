@@ -53,6 +53,7 @@ namespace AssignmentForm
             }
             IEnumerable<string> printEvent = File.ReadLines(@"EventList.txt");
             txtEList.Text = (String.Join(Environment.NewLine, printEvent));
+            
         }
 
         private void btnCancelViewELists_Click(object sender, EventArgs e)

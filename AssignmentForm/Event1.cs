@@ -67,6 +67,7 @@ namespace AssignmentForm
         public int getHour() { return eventDate.getHour(); }
         public int getMin() { return eventDate.getMin(); }
         public int updateAttendee() { return getNumAttendees() + 1; }
+        public string getCustomer() { return customer; }
         public bool addAttendee(Customer1 c)
         {
             if (numAttendees >= maxAttendees) { return false; }

@@ -124,8 +124,12 @@ namespace AssignmentForm
                 {
                     if (arrEvent[i] == newEve.getEventName())
                     {
+
                         string current = arrEvent[i + 7];
                         arrEvent[i + 7] = arrEvent[i + 7].Replace(current, (Convert.ToInt32(current) + 1).ToString());
+                        string currentName = arrEvent[i + 9];
+                        string customer = cm.getCustomer(cusId).getFirstName() + " " + cm.getCustomer(cusId).getLastName();
+                        arrEvent[i + 9] = arrEvent[i + 9].Replace(currentName, (currentName + ", " + customer).ToString());
                         available = true;
                         break;
                     }

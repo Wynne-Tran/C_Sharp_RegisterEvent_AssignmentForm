@@ -141,7 +141,7 @@ namespace AssignmentForm
             string s = "";
             for (int x = 0; x < numEvents; x++)
             {
-                s = eventList[x].getEventId()
+                s = s + "\n" + eventList[x].getEventId()
                     + "\n" + eventList[x].getEventName()
                     + "\n" + eventList[x].getVenue()
                     + "\n" + eventList[x].getDay()
