@@ -27,6 +27,8 @@ namespace AssignmentForm
         EventManager em;
         RSVP_Form r1;
         EventCoordinator coord;
+        CustomerManager cm2 = new CustomerManager(1, 100);
+        EventManager em2 = new EventManager(1, 100);
         public Register_Event()
         {
             InitializeComponent();
@@ -68,27 +70,88 @@ namespace AssignmentForm
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
             cm = FileCustomer.loadFromFile();
+            em = FileCustomer.loadFromTXTFile();
             txtout.Text = "";
             lblAtt.Text = "";
             
             int cusId = Convert.ToInt32(txtcus.Text);
             int eId = Convert.ToInt32(txtev.Text);
+
             Customer1 newReg = cm.getCustomer(cusId);
+            Event1 newEve = em.getEvent(eId);
+
             ec.addRegister(cusId, newReg.getFirstName(), newReg.getLastName(), eId);
             FileCustomer.writeRSVPFile(ec);
-            coord.addRegister(cusId, eId);
-            coord.addAttendee(cusId, eId);
             
-            FileCustomer.writeCoordFile(coord);
+            // code for update booking when customer register
+            String[] arr = File.ReadAllLines(@"CustomerListDetail.txt");
+            if (arr.Length != 0)
+            {
+                bool available = false;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] == newReg.getPhone())
+                    {
+                        string current = arr[i + 1];
+                        arr[i + 1] = arr[i + 1].Replace(current, (Convert.ToInt32(current) + 1).ToString());
+                        available = true;
+                        break;
+                    }
+                }
+
+                File.WriteAllLines(@"CustomerListDetail.txt", arr);
+                if (available == false)
+                {
+                    cm2.addCustomer(newReg.getFirstName(), newReg.getLastName(), newReg.getPhone());
+                    FileCustomer.writeToFileDetail(cm2, newReg.updateBookings());
+                }
+            }
+            else
+            {
+               cm2.addCustomer(newReg.getFirstName(), newReg.getLastName(), newReg.getPhone());
+            FileCustomer.writeToFileDetail(cm2, newReg.updateBookings());
+
+            }
+
+
+            // code for update attendee when customer register
+
+            String[] arrEvent = File.ReadAllLines(@"EventListDetail.txt");
+            if (arrEvent.Length != 0)
+            {
+                bool available = false;
+                for (int i = 0; i < arrEvent.Length; i++)
+                {
+                    if (arrEvent[i] == newEve.getEventName())
+                    {
+                        string current = arrEvent[i + 7];
+                        arrEvent[i + 7] = arrEvent[i + 7].Replace(current, (Convert.ToInt32(current) + 1).ToString());
+                        available = true;
+                        break;
+                    }
+                }
+
+                File.WriteAllLines(@"EventListDetail.txt", arrEvent);
+                if (available == false)
+                {
+                    em2.addEvent(newEve.getEventName(), newEve.getVenue(), newEve.getEventDate(), newEve.getMaxAttendees());
+                    FileCustomer.writeToTXTFileDetail(em2, newEve.updateAttendee(), cm.getCustomer(cusId));
+                }
+            }
+            else
+            {
+                em2.addEvent(newEve.getEventName(), newEve.getVenue(), newEve.getEventDate(), newEve.getMaxAttendees());
+                FileCustomer.writeToTXTFileDetail(em2, newEve.updateAttendee(), cm.getCustomer(cusId));
+
+            }
+
             lblAtt.Text = "Attendee added...";
             txtout.Text = "Thank you for registation!";
             txtcus.Text = "";
             txtev.Text = "";
 
-            // add attendee for event detail
-            
-           
-
         }
+
+        
     }
 }

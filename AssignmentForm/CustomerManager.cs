@@ -42,6 +42,16 @@ namespace AssignmentForm
             return true;
         }
 
+        public bool addCustomer(string fn, string ln, string ph, int booking)
+        {
+            if (numCustomers >= maxNumCustomers) { return false; }
+            Customer1 c = new Customer1(currentCustNumber, fn, ln, ph, booking);
+            currentCustNumber++;
+            customerList[numCustomers] = c;
+            numCustomers++;
+            return true;
+        }
+
         public int findCustomer(int cid)
         {
             for (int x = 0; x < numCustomers; x++)
@@ -73,6 +83,13 @@ namespace AssignmentForm
             return customerList[loc].ToString();
         }
 
+        public string getCustomerInfo2(int cid)
+        {
+            int loc = findCustomer(cid);
+            if (loc == -1) { return null; }
+            return customerList[loc].ToString();
+        }
+
         public bool deleteCustomer(int cid)
         {
             int loc = findCustomer(cid);
@@ -87,7 +104,18 @@ namespace AssignmentForm
             string s = "";
             for (int x = 0; x < numCustomers; x++)
             {
-                s = s + customerList[x].getId() + "\n" + customerList[x].getFirstName() + "\n" + customerList[x].getLastName() + "\n" + customerList[x].getPhone() + "\n";
+                s = s + customerList[x].getId() + "\n" + customerList[x].getFirstName() + "\n" + customerList[x].getLastName() + "\n" + customerList[x].getPhone();
+                //s = s + "\n";
+            }
+            return s;
+        }
+
+        public string getCustomerList(int booking)
+        {
+            string s = "";
+            for (int x = 0; x < numCustomers; x++)
+            {
+                s = s + customerList[x].getId() + "\n" + customerList[x].getFirstName() + "\n" + customerList[x].getLastName() + "\n" + customerList[x].getPhone()+"\n" + booking + "\n";
                 //s = s + "\n";
             }
             return s;

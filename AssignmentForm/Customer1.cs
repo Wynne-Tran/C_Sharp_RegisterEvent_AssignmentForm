@@ -32,15 +32,24 @@ namespace AssignmentForm
 
         }
 
+        public Customer1(int cId, string fname, string lname, string ph, int booking)
+        {
+            bookings = booking;
+            customerId = cId;
+            firstName = fname;
+            lastName = lname;
+            phone = ph;
+
+        }
 
         public int getId() { return customerId; }
         public string getFirstName() { return firstName; }
         public string getLastName() { return lastName; }
         public string getPhone() { return phone; }
         public int getNumBookings() { return bookings; }
-        public void updateBookings()
+        public int updateBookings()
         {
-            bookings++;
+            return bookings = bookings + 1;
         }
 
 

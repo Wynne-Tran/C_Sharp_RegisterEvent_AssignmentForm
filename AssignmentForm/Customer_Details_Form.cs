@@ -23,6 +23,7 @@ namespace AssignmentForm
     public partial class Customer_Details_Form : Form
     {
         CustomerManager printDetail;
+        CustomerManager printDetailB;
         Customer c3;
         public Customer_Details_Form()
         {
@@ -47,6 +48,7 @@ namespace AssignmentForm
         {
             InitializeComponent();
             printDetail = am;
+            printDetailB = am;
         }
         private void btnCancelCustDetail_Click(object sender, EventArgs e)
         {
@@ -67,9 +69,23 @@ namespace AssignmentForm
         {
 
             printDetail = FileCustomer.loadFromFile();
+            printDetailB = FileCustomer.loadFromFileDetail();
             txtList.Text = "";
             int id = Convert.ToInt32(txtID.Text);
-            txtList.Text = Convert.ToString(printDetail.getCustomerInfo(id));
+            var lines = File.ReadLines(@"CustomerList.txt");
+            foreach (var line in lines)
+            {
+                if (line == txtID.Text)
+                {
+                    txtList.Text = Convert.ToString(printDetailB.getCustomerInfo2(id));
+                }
+
+            }
+            if (txtList.Text == "")
+            {
+                txtList.Text = Convert.ToString(printDetail.getCustomerInfo(id));
+            }
+            
         }
     }
 }

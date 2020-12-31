@@ -27,7 +27,7 @@ namespace AssignmentForm
         private int numAttendees;
         private string dateCreated;
         private Customer1[] attendeeList;
-
+        private string customer;
         public Event1(int eventId, string name, string venue, Date eventDate, int maxAttendees)
         {
             this.eventId = eventId;
@@ -40,6 +40,18 @@ namespace AssignmentForm
             dateCreated = DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt");
         }
 
+        public Event1(int eventId, string name, string venue, Date eventDate, int maxAttendees, int attendee, string customer)
+        {
+            this.eventId = eventId;
+            eventName = name;
+            this.venue = venue;
+            this.eventDate = eventDate;
+            this.maxAttendees = maxAttendees;
+            this.customer = customer;
+            numAttendees = attendee;
+            attendeeList = new Customer1[maxAttendees];
+            dateCreated = DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt");
+        }
 
         public int getEventId() { return eventId; }
         public string getEventName() { return eventName; }
@@ -54,8 +66,7 @@ namespace AssignmentForm
         public int getYear() { return eventDate.getYear(); }
         public int getHour() { return eventDate.getHour(); }
         public int getMin() { return eventDate.getMin(); }
-
-
+        public int updateAttendee() { return getNumAttendees() + 1; }
         public bool addAttendee(Customer1 c)
         {
             if (numAttendees >= maxAttendees) { return false; }
@@ -85,7 +96,7 @@ namespace AssignmentForm
 
         public string getAttendees()
         {
-            string s = "\nCustomers registered :";
+            string s = "";
             for (int x = 0; x < numAttendees; x++)
             {
                 s = s + "\n" + attendeeList[x].getFirstName() + " " + attendeeList[x].getLastName();
@@ -101,7 +112,7 @@ namespace AssignmentForm
             s = s + " Date:" + eventDate;
             s = s + " Registered Attendees:" + numAttendees;
             s = s + " Available spaces:" + (maxAttendees - numAttendees);
-            s = s + getAttendees();
+            s = s + " Attendee Lists:" + customer;
             return s;
         }
 

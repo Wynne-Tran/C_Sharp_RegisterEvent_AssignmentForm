@@ -22,7 +22,7 @@ namespace AssignmentForm
 {
     public partial class Event_Detail : Form
     {
-        EventManager printList;
+        EventManager printList, printListB;
         Event e3;
         public Event_Detail()
         {
@@ -63,9 +63,24 @@ namespace AssignmentForm
         private void btnDetail_Click(object sender, EventArgs e)
         {
             printList = FileCustomer.loadFromTXTFile();
+            printListB = FileCustomer.loadFromTXTFileDetail();
             txtEList.Text = "";
             int id = Convert.ToInt32(txtID.Text);
             txtEList.Text = printList.getEventInfo(id).ToString();
+
+            var lines = File.ReadLines(@"EventList.txt");
+            foreach (var line in lines)
+            {
+                if (line == txtID.Text)
+                {
+                    txtEList.Text = Convert.ToString(printListB.getEventInfo2(id));
+                }
+
+            }
+            if (txtEList.Text == "")
+            {
+                txtEList.Text = Convert.ToString(printList.getEventInfo(id));
+            }
         }
     }
 }

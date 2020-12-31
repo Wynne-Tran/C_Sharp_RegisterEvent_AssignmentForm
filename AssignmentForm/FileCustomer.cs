@@ -18,7 +18,7 @@ namespace AssignmentForm
 {
     class FileCustomer
     {
-        public static void writeToFileDetail(CustomerManager am)
+        public static void writeToFileDetail(CustomerManager am, int booking)
         {
             int numCustomer = am.getNumCustomer();
             Customer1 temp;
@@ -28,12 +28,38 @@ namespace AssignmentForm
             {
                 temp = am.getAccountAtPosition(x);
             }
-            sw.WriteLineAsync(am.getCustomerList());
+            sw.WriteLine(am.getCustomerList(booking));
             
-            sw.Flush(); // buffer make sure no error
+            sw.Flush();
             sw.Close();
+            
 
         }
+
+        public static CustomerManager loadFromFileDetail()
+        {
+            CustomerManager am = new CustomerManager(1, 100);
+            int numCustomer;
+            string id;
+            string fname, lname, ph, booking;
+
+            StreamReader sr = new StreamReader(@"CustomerListDetail.txt");
+            numCustomer = Convert.ToInt32(sr.ReadLine());
+            //sr.ReadLine();
+            for (int x = 0; x < numCustomer; x++)
+            {
+                id = sr.ReadLine();
+                fname = sr.ReadLine();
+                lname = sr.ReadLine();
+                ph = sr.ReadLine();
+                booking = sr.ReadLine();
+                am.addCustomer(fname, lname, ph, Convert.ToInt32(booking));
+            }
+            sr.Close();
+            return am;
+        }
+
+
         public static void writeToFile(CustomerManager am)
         {
             int numCustomer = am.getNumCustomer();
@@ -50,8 +76,6 @@ namespace AssignmentForm
             
         }
 
-
-
         public static CustomerManager loadFromFile()
         {
             CustomerManager am = new CustomerManager(1, 100);
@@ -67,7 +91,6 @@ namespace AssignmentForm
                 fname = sr.ReadLine();
                 lname = sr.ReadLine();
                 ph = sr.ReadLine();
-                am.getBookingDetail(Convert.ToInt32(id));
                 am.addCustomer(fname, lname, ph);
                 
             }
@@ -87,7 +110,7 @@ namespace AssignmentForm
                 temp = am.getEventAtPosition(x);
             }
             sw.WriteLineAsync(am.getEventListinForm());
-            sw.Flush(); 
+            sw.Flush();
             sw.Close();
 
 
@@ -101,6 +124,56 @@ namespace AssignmentForm
             int day, month, year, hour, minus, maxAttendee;
             StreamReader sr = new StreamReader(@"EventList.txt");
             numEvent = Convert.ToInt32(sr.ReadLine());
+            sr.ReadLine();
+            for (int x = 0; x < numEvent; x++)
+            {
+                id = sr.ReadLine();
+                name = sr.ReadLine();
+                venue = sr.ReadLine();
+                day = Int32.Parse(sr.ReadLine());
+                month = Int32.Parse(sr.ReadLine());
+                year = Int32.Parse(sr.ReadLine());
+                hour = Int32.Parse(sr.ReadLine());
+                minus = Int32.Parse(sr.ReadLine()); 
+                maxAttendee = Int32.Parse(sr.ReadLine());
+                Date edate = new Date(day, month, year, hour, minus);
+                em.addEvent(name, venue, edate, maxAttendee);
+            }
+
+            sr.Close();
+            return em;
+        }
+
+
+
+        public static void writeToTXTFileDetail(EventManager am, int attendee, Customer1 c)
+        {
+            int numEvent = am.getNumEvents();
+            string customer = c.getFirstName() + " " + c.getLastName();
+            Event1 temp;
+            StreamWriter sw = new StreamWriter(@"EventListDetail.txt");
+            sw.WriteLine(numEvent);
+            for (int x = 0; x < numEvent; x++)
+            {
+                temp = am.getEventAtPosition(x);
+            }
+            sw.WriteLineAsync(am.getEventListinForm(attendee, customer));
+            
+
+            sw.Flush(); 
+            sw.Close();
+
+
+        }
+        public static EventManager loadFromTXTFileDetail()
+        {
+
+            EventManager em = new EventManager(1, 100);
+            int numEvent;
+            string id, name, venue, customer;
+            int day, month, year, hour, minus, attendee, maxAttendee;
+            StreamReader sr = new StreamReader(@"EventListDetail.txt");
+            numEvent = Convert.ToInt32(sr.ReadLine());
             for (int x = 0; x < numEvent; x++)
             {
                 id = sr.ReadLine();
@@ -111,14 +184,18 @@ namespace AssignmentForm
                 year = Int32.Parse(sr.ReadLine());
                 hour = Int32.Parse(sr.ReadLine());
                 minus = Int32.Parse(sr.ReadLine());
-                maxAttendee = Int32.Parse(sr.ReadLine());
+                attendee = Int32.Parse(sr.ReadLine());
+                maxAttendee = Int32.Parse(sr.ReadLine()) - attendee;
+                customer = sr.ReadLine();
                 Date edate = new Date(day, month, year, hour, minus);
-                em.addEvent(name, venue, edate, maxAttendee);
+                em.addEvent(name, venue, edate, maxAttendee, attendee, customer);
              }
 
             sr.Close();
             return em;
         }
+
+
 
 
         public static void writeRSVPFile(RSVPManager am)
@@ -144,6 +221,7 @@ namespace AssignmentForm
             int cusId, eId;
             StreamReader sr = new StreamReader(@"RSVPList.txt");
             numRSVP = Convert.ToInt32(sr.ReadLine());
+            sr.ReadLine();
             for (int x = 0; x < numRSVP; x++)
             {
                 id = sr.ReadLine();

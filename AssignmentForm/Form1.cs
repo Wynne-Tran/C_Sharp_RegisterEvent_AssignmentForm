@@ -31,7 +31,7 @@ namespace AssignmentForm
             ec = new EventCoordinator(200, 1000, 101, 5000, 100, 10000); // add data
             soundXmast.SoundLocation = "Bell.wav";
             soundXmast.Load();
-            soundXmast.Play();
+            //soundXmast.Play();
             soundXmast.PlayLooping();
         }
 
@@ -79,7 +79,7 @@ namespace AssignmentForm
             Customer cust = new Customer(this);
             cust.StartPosition = FormStartPosition.CenterParent;
             this.Hide();
-            //this.soundXmast.Stop();
+            this.soundXmast.Stop();
             cust.Show();
         }
 
@@ -88,7 +88,7 @@ namespace AssignmentForm
             Event newEvent = new Event(this);
             newEvent.StartPosition = FormStartPosition.CenterParent;
             this.Hide();
-            //this.soundXmast.Stop();
+            this.soundXmast.Stop();
             newEvent.Show();
         }
 
@@ -97,7 +97,7 @@ namespace AssignmentForm
             RSVP_Form newRegister = new RSVP_Form(this);
             newRegister.StartPosition = FormStartPosition.CenterParent;
             this.Hide();
-            //this.soundXmast.Stop();
+            this.soundXmast.Stop();
             newRegister.Show();
         }
 

@@ -41,6 +41,16 @@ namespace AssignmentForm
             return true;
         }
 
+        public bool addEvent(string name, string venue, Date eventDate, int maxAttendees, int Attendee, string cus)
+        {
+            if (numEvents >= maxEvents) { return false; }
+            Event1 e = new Event1(currentEventId, name, venue, eventDate, maxAttendees, Attendee, cus);
+            eventList[numEvents] = e;
+            numEvents++;
+            currentEventId++;
+            return true;
+        }
+
         private int findEvent(int eid)
         {
             for (int x = 0; x < numEvents; x++)
@@ -90,6 +100,13 @@ namespace AssignmentForm
             if (loc == -1) { return "There is no event with id " + eid + "."; }
             return eventList[loc].ToString();
         }
+
+        public string getEventInfo2(int eid)
+        {
+            int loc = findEvent(eid);
+            if (loc == -1) { return null; }
+            return eventList[loc].ToString();
+        }
         public string getEventList()
         {
             string s = "";
@@ -106,7 +123,7 @@ namespace AssignmentForm
             string s = "";
             for (int x = 0; x < numEvents; x++)
             {
-                s = eventList[x].getEventId() 
+                s = s+"\n" + eventList[x].getEventId() 
                     + "\n" + eventList[x].getEventName() 
                     + "\n" + eventList[x].getVenue()
                     + "\n" + eventList[x].getDay() 
@@ -115,6 +132,26 @@ namespace AssignmentForm
                     + "\n" + eventList[x].getHour() 
                     + "\n" + eventList[x].getMin() 
                     + "\n" + eventList[x].getMaxAttendees();
+            }
+            return s;
+        }
+
+        public string getEventListinForm(int attendee, string customer)
+        {
+            string s = "";
+            for (int x = 0; x < numEvents; x++)
+            {
+                s = eventList[x].getEventId()
+                    + "\n" + eventList[x].getEventName()
+                    + "\n" + eventList[x].getVenue()
+                    + "\n" + eventList[x].getDay()
+                    + "\n" + eventList[x].getMonth()
+                    + "\n" + eventList[x].getYear()
+                    + "\n" + eventList[x].getHour()
+                    + "\n" + eventList[x].getMin()
+                    + "\n" + attendee
+                    + "\n" + eventList[x].getMaxAttendees()
+                    + "\n" + customer;
             }
             return s;
         }
@@ -134,5 +171,6 @@ namespace AssignmentForm
             return null;
         }
 
+        
     }
 }

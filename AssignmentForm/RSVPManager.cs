@@ -107,11 +107,10 @@ namespace AssignmentForm
 
         public string getRegisterListinForm()
         {
-
             string s = "";
             for (int x = 0; x < numRegister; x++)
             {
-                s = s + registerList[x].getregId();
+                s = s + "\n" + registerList[x].getregId();
                 s = s + "\n" + registerList[x].getcusId();
                 s = s + "\n" + registerList[x].geteveId();
                 s = s + "\n" + registerList[x].getCustomerFName();
