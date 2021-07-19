@@ -112,7 +112,7 @@ namespace AssignmentForm
             string s = "";
             for (int x = 0; x < numEvents; x++)
             {
-                s = eventList[x].getEventId() + "\r\n" + eventList[x].getEventName() + "\r\n" + eventList[x].getVenue() + "\r\n"
+                s = eventList[x].getEventId() + "\r\n" + eventList[x].getEventName() + "\r\n" + eventList[x].getVenue()
                     ;
             }
             return s;
@@ -132,7 +132,7 @@ namespace AssignmentForm
                     + "\n" + eventList[x].getHour() 
                     + "\n" + eventList[x].getMin() 
                     + "\n" + eventList[x].getMaxAttendees() 
-                    + "\n";
+                    ;
             }
             return s;
         }

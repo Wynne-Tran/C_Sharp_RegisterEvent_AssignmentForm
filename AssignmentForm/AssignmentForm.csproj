@@ -107,12 +107,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer_form.Designer.cs">
-      <DependentUpon>Customer_form.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +127,12 @@
     <Compile Include="Register_Event.Designer.cs">
       <DependentUpon>Register_Event.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_form.designer.cs">
+      <DependentUpon>Customer_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="RSVP.cs" />
     <Compile Include="RSVPManager.cs" />
     <Compile Include="RSVP_Form.cs">
@@ -149,9 +149,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer1.resx">
       <DependentUpon>Customer1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer_form.resx">
-      <DependentUpon>Customer_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Delete.resx">
       <DependentUpon>Customer_Delete.cs</DependentUpon>
@@ -195,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register_Event.resx">
       <DependentUpon>Register_Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_form.resx">
+      <DependentUpon>Customer_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RSVP_Form.resx">
       <DependentUpon>RSVP_Form.cs</DependentUpon>

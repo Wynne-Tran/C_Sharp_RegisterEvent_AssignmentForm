@@ -108,7 +108,7 @@ namespace AssignmentForm
             {
                 temp = am.getEventAtPosition(x);
             }
-            sw.WriteLineAsync(am.getEventListinForm());
+            sw.WriteLine(am.getEventListinForm());
             sw.Flush();
             sw.Close();
 
@@ -129,12 +129,12 @@ namespace AssignmentForm
                 id = sr.ReadLine();
                 name = sr.ReadLine();
                 venue = sr.ReadLine();
-                day = Int32.Parse(sr.ReadLine());
-                month = Int32.Parse(sr.ReadLine());
-                year = Int32.Parse(sr.ReadLine());
-                hour = Int32.Parse(sr.ReadLine());
-                minus = Int32.Parse(sr.ReadLine()); 
-                maxAttendee = Int32.Parse(sr.ReadLine());
+                day = Convert.ToInt32(sr.ReadLine());
+                month = Convert.ToInt32(sr.ReadLine());
+                year = Convert.ToInt32(sr.ReadLine());
+                hour = Convert.ToInt32(sr.ReadLine());
+                minus = Convert.ToInt32(sr.ReadLine()); 
+                maxAttendee = Convert.ToInt32(sr.ReadLine());
                 Date edate = new Date(day, month, year, hour, minus);
                 em.addEvent(name, venue, edate, maxAttendee);
             }

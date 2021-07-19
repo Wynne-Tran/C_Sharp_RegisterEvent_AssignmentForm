@@ -29,12 +29,12 @@ namespace AssignmentForm
             // step 1 to made form transparent
             //SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             //this.BackColor = Color.Transparent;
-            CenterToParent();
+            this.StartPosition = FormStartPosition.CenterParent;
         }
         // step 2 to made form transparent
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-           // e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
+            //e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
         }
         public Adding_Event(Event e)
         {
@@ -75,6 +75,24 @@ namespace AssignmentForm
             (txtMax.Text) = "";
         }
 
-        
+        private void txtVenue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

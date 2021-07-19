@@ -44,6 +44,7 @@ namespace AssignmentForm
         public Adding_Customers(Customer c)
         {
             InitializeComponent();
+            
             c1 = c;
             cm = new CustomerManager(1, 100);
         }
