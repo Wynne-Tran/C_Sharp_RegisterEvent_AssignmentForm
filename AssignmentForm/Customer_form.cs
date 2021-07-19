@@ -36,7 +36,6 @@ namespace AssignmentForm
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            
             f1.Show();
             this.Close();
         }
@@ -72,9 +71,6 @@ namespace AssignmentForm
             deleteCustomer.ShowDialog(); // show Customer_Delete form
         }
 
-        private void clickMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        
     }
     }

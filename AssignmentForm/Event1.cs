@@ -108,12 +108,12 @@ namespace AssignmentForm
         public override string ToString()
         {
             string s = "Event: " + eventId ;
-            s=s+ " Name: " + eventName;
-            s = s + " Venue: " + venue;
-            s = s + " Date:" + eventDate;
-            s = s + " Registered Attendees:" + numAttendees;
-            s = s + " Available spaces:" + (maxAttendees - numAttendees);
-            s = s + " Attendee Lists:" + customer;
+            s=s+ "\r\nName: " + eventName;
+            s = s + "\r\nVenue: " + venue;
+            s = s + "\r\nDate:" + eventDate;
+            s = s + "\r\nRegistered Attendees:" + numAttendees;
+            s = s + "\r\nAvailable spaces:" + (maxAttendees - numAttendees);
+            s = s + "\r\nAttendee Lists:" + customer;
             return s;
         }
 

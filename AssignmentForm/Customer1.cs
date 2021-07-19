@@ -56,10 +56,10 @@ namespace AssignmentForm
         public override string ToString()
         {
             
-            string s = "Customer: " + customerId;
-            s = s + "\nName: " + firstName + " " + lastName;
-            s = s + "\nPhone: " + phone;
-            s = s + "\nBookings: " + bookings;
+            string s = "Customer ID: " + customerId;
+            s = s + "\r\nName: " + firstName + " " + lastName;
+            s = s + "\r\nPhone: " + phone;
+            s = s + "\r\nBookings: " + bookings + "\r\n";
             
             return s;
         }

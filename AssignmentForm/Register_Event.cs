@@ -33,14 +33,14 @@ namespace AssignmentForm
         {
             InitializeComponent();
             // step 1 to made form transparent
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = Color.Transparent;
+            //SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //this.BackColor = Color.Transparent;
             CenterToParent();
         }
         // step 2 to made form transparent
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
+            //e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
         }
         public Register_Event(RSVP_Form r)
         {
@@ -76,7 +76,7 @@ namespace AssignmentForm
             
             int cusId = Convert.ToInt32(txtcus.Text);
             int eId = Convert.ToInt32(txtev.Text);
-
+            
             Customer1 newReg = cm.getCustomer(cusId);
             Event1 newEve = em.getEvent(eId);
 

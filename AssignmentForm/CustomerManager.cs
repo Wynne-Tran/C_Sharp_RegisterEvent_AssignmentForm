@@ -104,7 +104,7 @@ namespace AssignmentForm
             string s = "";
             for (int x = 0; x < numCustomers; x++)
             {
-                s = s + customerList[x].getId() + "\n" + customerList[x].getFirstName() + "\n" + customerList[x].getLastName() + "\n" + customerList[x].getPhone();
+                s = s + customerList[x].getId() + "\n" + customerList[x].getFirstName() + "\n" + customerList[x].getLastName() + "\n" + customerList[x].getPhone() + "\n";
                 //s = s + "\n";
             }
             return s;

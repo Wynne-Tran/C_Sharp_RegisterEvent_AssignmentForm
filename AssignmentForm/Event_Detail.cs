@@ -29,14 +29,14 @@ namespace AssignmentForm
             
             InitializeComponent();
             // step 1 to made form transparent
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = Color.Transparent;
+            //SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //this.BackColor = Color.Transparent;
             CenterToParent();
         }
         // step 2 to made form transparent
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
+            //e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
         }
         public Event_Detail(Event e)
         {

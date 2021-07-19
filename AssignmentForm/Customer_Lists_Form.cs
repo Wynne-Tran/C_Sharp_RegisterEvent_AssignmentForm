@@ -28,8 +28,8 @@ namespace AssignmentForm
         {
             InitializeComponent();
             // step 1 to made form transparent
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = Color.Transparent;
+            //SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //this.BackColor = Color.Transparent;
         }
 
         public Customer_Lists_Form(CustomerManager am)
@@ -41,7 +41,7 @@ namespace AssignmentForm
         // step 2 to made form transparent
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
+            //e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
         }
         
         public Customer_Lists_Form(Customer c)

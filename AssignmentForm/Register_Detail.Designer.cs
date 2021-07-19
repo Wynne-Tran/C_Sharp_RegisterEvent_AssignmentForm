@@ -41,9 +41,10 @@
             this.btnCancelEventDetail.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCancelEventDetail.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelEventDetail.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCancelEventDetail.Location = new System.Drawing.Point(241, 425);
+            this.btnCancelEventDetail.Location = new System.Drawing.Point(563, 749);
+            this.btnCancelEventDetail.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelEventDetail.Name = "btnCancelEventDetail";
-            this.btnCancelEventDetail.Size = new System.Drawing.Size(118, 35);
+            this.btnCancelEventDetail.Size = new System.Drawing.Size(236, 67);
             this.btnCancelEventDetail.TabIndex = 11;
             this.btnCancelEventDetail.Text = "Cancel";
             this.btnCancelEventDetail.UseVisualStyleBackColor = false;
@@ -55,9 +56,10 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(44, 382);
+            this.label2.Location = new System.Drawing.Point(101, 677);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 19);
+            this.label2.Size = new System.Drawing.Size(341, 36);
             this.label2.TabIndex = 10;
             this.label2.Text = "Please enter register ID:";
             // 
@@ -65,9 +67,10 @@
             // 
             this.txtID.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtID.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtID.Location = new System.Drawing.Point(278, 381);
+            this.txtID.Location = new System.Drawing.Point(529, 682);
+            this.txtID.Margin = new System.Windows.Forms.Padding(6);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(151, 20);
+            this.txtID.Size = new System.Drawing.Size(298, 31);
             this.txtID.TabIndex = 9;
             // 
             // btnDetail
@@ -75,9 +78,10 @@
             this.btnDetail.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDetail.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnDetail.Location = new System.Drawing.Point(97, 425);
+            this.btnDetail.Location = new System.Drawing.Point(192, 749);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(6);
             this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(118, 35);
+            this.btnDetail.Size = new System.Drawing.Size(236, 67);
             this.btnDetail.TabIndex = 8;
             this.btnDetail.Text = "Detail";
             this.btnDetail.UseVisualStyleBackColor = false;
@@ -89,9 +93,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(44, 36);
+            this.label1.Location = new System.Drawing.Point(88, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 19);
+            this.label1.Size = new System.Drawing.Size(213, 36);
             this.label1.TabIndex = 12;
             this.label1.Text = "Register Lists: ";
             // 
@@ -99,18 +104,19 @@
             // 
             this.txtListR.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtListR.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtListR.Location = new System.Drawing.Point(64, 74);
+            this.txtListR.Location = new System.Drawing.Point(128, 142);
+            this.txtListR.Margin = new System.Windows.Forms.Padding(6);
             this.txtListR.Multiline = true;
             this.txtListR.Name = "txtListR";
-            this.txtListR.Size = new System.Drawing.Size(376, 259);
+            this.txtListR.Size = new System.Drawing.Size(748, 494);
             this.txtListR.TabIndex = 13;
             // 
             // Register_Detail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(524, 485);
+            this.ClientSize = new System.Drawing.Size(1048, 933);
             this.Controls.Add(this.txtListR);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelEventDetail);
@@ -119,6 +125,7 @@
             this.Controls.Add(this.btnDetail);
             this.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Register_Detail";
             this.Text = "Register_Detail";
             this.Load += new System.EventHandler(this.Register_Detail_Load);

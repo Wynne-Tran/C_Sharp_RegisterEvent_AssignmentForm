@@ -41,9 +41,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(345, 214);
+            this.label1.Location = new System.Drawing.Point(690, 412);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 23);
+            this.label1.Size = new System.Drawing.Size(0, 45);
             this.label1.TabIndex = 1;
             // 
             // label2
@@ -52,9 +53,10 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(328, 103);
+            this.label2.Location = new System.Drawing.Point(656, 198);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 23);
+            this.label2.Size = new System.Drawing.Size(0, 45);
             this.label2.TabIndex = 2;
             // 
             // label9
@@ -63,9 +65,10 @@
             this.label9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label9.Location = new System.Drawing.Point(76, 37);
+            this.label9.Location = new System.Drawing.Point(152, 71);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 23);
+            this.label9.Size = new System.Drawing.Size(222, 45);
             this.label9.TabIndex = 24;
             this.label9.Text = "Event Lists: ";
             // 
@@ -74,9 +77,10 @@
             this.btnCancelViewELists.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCancelViewELists.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelViewELists.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCancelViewELists.Location = new System.Drawing.Point(256, 356);
+            this.btnCancelViewELists.Location = new System.Drawing.Point(512, 685);
+            this.btnCancelViewELists.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCancelViewELists.Name = "btnCancelViewELists";
-            this.btnCancelViewELists.Size = new System.Drawing.Size(132, 41);
+            this.btnCancelViewELists.Size = new System.Drawing.Size(264, 79);
             this.btnCancelViewELists.TabIndex = 23;
             this.btnCancelViewELists.Text = "Cancel";
             this.btnCancelViewELists.UseVisualStyleBackColor = false;
@@ -86,18 +90,19 @@
             // 
             this.txtEList.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtEList.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtEList.Location = new System.Drawing.Point(107, 63);
+            this.txtEList.Location = new System.Drawing.Point(140, 121);
+            this.txtEList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtEList.Multiline = true;
             this.txtEList.Name = "txtEList";
-            this.txtEList.Size = new System.Drawing.Size(410, 247);
+            this.txtEList.Size = new System.Drawing.Size(890, 471);
             this.txtEList.TabIndex = 25;
             // 
             // EventLists
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(589, 429);
+            this.ClientSize = new System.Drawing.Size(1178, 825);
             this.Controls.Add(this.txtEList);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancelViewELists);
@@ -105,6 +110,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "EventLists";
             this.Text = "EventLists";
             this.Load += new System.EventHandler(this.EventLists_Load);

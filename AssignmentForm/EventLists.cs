@@ -28,14 +28,14 @@ namespace AssignmentForm
         {
             InitializeComponent();
             // step 1 to made form transparent
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = Color.Transparent;
+           // SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //this.BackColor = Color.Transparent;
             CenterToParent();
         }
         // step 2 to made form transparent
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
+            //e.Graphics.FillRectangle(Brushes.Transparent, e.ClipRectangle);
         }
         public EventLists(Event e)
         {
@@ -51,9 +51,12 @@ namespace AssignmentForm
             {
                 File.CreateText(@"EventList.txt");
             }
+            
             IEnumerable<string> printEvent = File.ReadLines(@"EventList.txt");
             txtEList.Text = (String.Join(Environment.NewLine, printEvent));
             
+            
+
         }
 
         private void btnCancelViewELists_Click(object sender, EventArgs e)

@@ -42,9 +42,10 @@
             this.btnDetail.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDetail.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnDetail.Location = new System.Drawing.Point(125, 378);
+            this.btnDetail.Location = new System.Drawing.Point(250, 727);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(6);
             this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(118, 35);
+            this.btnDetail.Size = new System.Drawing.Size(236, 67);
             this.btnDetail.TabIndex = 0;
             this.btnDetail.Text = "Detail";
             this.btnDetail.UseVisualStyleBackColor = false;
@@ -56,9 +57,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(23, 18);
+            this.label1.Location = new System.Drawing.Point(46, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 23);
+            this.label1.Size = new System.Drawing.Size(279, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Lists: ";
             // 
@@ -66,9 +68,10 @@
             // 
             this.txtID.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtID.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtID.Location = new System.Drawing.Point(276, 334);
+            this.txtID.Location = new System.Drawing.Point(552, 642);
+            this.txtID.Margin = new System.Windows.Forms.Padding(6);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(151, 20);
+            this.txtID.Size = new System.Drawing.Size(298, 31);
             this.txtID.TabIndex = 2;
             // 
             // label2
@@ -77,9 +80,10 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(55, 334);
+            this.label2.Location = new System.Drawing.Point(110, 642);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 19);
+            this.label2.Size = new System.Drawing.Size(377, 36);
             this.label2.TabIndex = 3;
             this.label2.Text = "Please enter customer\'s ID:";
             // 
@@ -88,9 +92,10 @@
             this.btnCancelCustDetail.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCancelCustDetail.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelCustDetail.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCancelCustDetail.Location = new System.Drawing.Point(276, 378);
+            this.btnCancelCustDetail.Location = new System.Drawing.Point(552, 727);
+            this.btnCancelCustDetail.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelCustDetail.Name = "btnCancelCustDetail";
-            this.btnCancelCustDetail.Size = new System.Drawing.Size(118, 35);
+            this.btnCancelCustDetail.Size = new System.Drawing.Size(236, 67);
             this.btnCancelCustDetail.TabIndex = 4;
             this.btnCancelCustDetail.Text = "Cancel";
             this.btnCancelCustDetail.UseVisualStyleBackColor = false;
@@ -100,11 +105,13 @@
             // 
             this.txtList.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtList.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtList.Location = new System.Drawing.Point(59, 44);
+            this.txtList.Location = new System.Drawing.Point(118, 85);
+            this.txtList.Margin = new System.Windows.Forms.Padding(6);
             this.txtList.Multiline = true;
             this.txtList.Name = "txtList";
-            this.txtList.Size = new System.Drawing.Size(430, 200);
+            this.txtList.Size = new System.Drawing.Size(856, 381);
             this.txtList.TabIndex = 5;
+            
             // 
             // lblero
             // 
@@ -112,17 +119,18 @@
             this.lblero.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblero.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblero.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblero.Location = new System.Drawing.Point(166, 280);
+            this.lblero.Location = new System.Drawing.Point(332, 538);
+            this.lblero.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblero.Name = "lblero";
-            this.lblero.Size = new System.Drawing.Size(0, 19);
+            this.lblero.Size = new System.Drawing.Size(0, 36);
             this.lblero.TabIndex = 6;
             // 
             // Customer_Details_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(552, 453);
+            this.ClientSize = new System.Drawing.Size(1104, 871);
             this.Controls.Add(this.lblero);
             this.Controls.Add(this.txtList);
             this.Controls.Add(this.btnCancelCustDetail);
@@ -132,6 +140,7 @@
             this.Controls.Add(this.btnDetail);
             this.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Customer_Details_Form";
             this.Text = "Customer_Details_Form";
             this.Load += new System.EventHandler(this.Customer_Details_Form_Load);

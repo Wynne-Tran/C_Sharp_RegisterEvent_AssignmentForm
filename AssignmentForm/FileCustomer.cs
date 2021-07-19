@@ -28,7 +28,7 @@ namespace AssignmentForm
             {
                 temp = am.getAccountAtPosition(x);
             }
-            sw.WriteLine(am.getCustomerList(booking));
+            sw.WriteLine(am.getCustomerList(booking) + "\r\n");
             
             sw.Flush();
             sw.Close();
@@ -70,10 +70,9 @@ namespace AssignmentForm
             {
                 temp = am.getAccountAtPosition(x);
             }
-            sw.WriteLineAsync(am.getCustomerList());
+            sw.WriteLine(am.getCustomerList());
             sw.Flush(); // buffer make sure no error
             sw.Close();
-            
         }
 
         public static CustomerManager loadFromFile()
